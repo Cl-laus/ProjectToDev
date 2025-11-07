@@ -1,4 +1,4 @@
-package entity;
+package fr.m2i.project_to_dev.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,7 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
 
+@Table(name="users")
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // car des enfants heritent de cette classe
 public abstract class User {

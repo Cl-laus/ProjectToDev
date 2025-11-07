@@ -1,4 +1,4 @@
-package entity;
+package fr.m2i.project_to_dev.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 public class ProjectOwner extends User {
     private String company;
 
-    @Column(name = "projects_id", nullable = false)
+    
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Project> projects = new ArrayList<>();
 

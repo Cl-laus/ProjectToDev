@@ -1,4 +1,4 @@
-package entity;
+package fr.m2i.project_to_dev.entity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -21,11 +21,11 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "owner_id", nullable = false)
+   
     @ManyToOne
     private ProjectOwner owner;
 
-    @Column(name = "candidacies_id", nullable = false)
+    
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Candidacy> candidacies = new ArrayList<>();
 

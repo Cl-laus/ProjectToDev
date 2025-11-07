@@ -1,4 +1,4 @@
-package entity;
+package fr.m2i.project_to_dev.entity;
 
 import java.time.LocalDateTime;
 
@@ -9,6 +9,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -18,19 +19,20 @@ public class Candidacy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "dev_id", nullable = false)
+    @JoinColumn(name = "dev_id", nullable = false)
     @ManyToOne
     private Dev dev;
 
-    @Column(name = "project_id", nullable = false)
+    @JoinColumn(name = "project_id", nullable = false)
     @ManyToOne
     private Project project;
 
-    @Column(nullable = false)
+    @Column(name = "submit_date", nullable = false)
     private LocalDateTime submitDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    
+    @Column(nullable = false, length = 20)
     private CandidacyStatus status = CandidacyStatus.PENDING;// lié au enum dans le fichier du meme nom
     // assigne une valeur par default
 

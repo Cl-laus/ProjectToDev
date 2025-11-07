@@ -1,4 +1,4 @@
-package entity;
+package fr.m2i.project_to_dev.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Dev extends User {
 
     private List<String> skills;
     private Integer experience;
-@Column(name = "candidacies_id", nullable = false)
+
     @OneToMany(mappedBy = "dev", cascade = CascadeType.ALL)
     private List<Candidacy> candidacies = new ArrayList<>();
 
