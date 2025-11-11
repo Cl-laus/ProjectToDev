@@ -1,7 +1,5 @@
 package fr.m2i.project_to_dev.repository;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
