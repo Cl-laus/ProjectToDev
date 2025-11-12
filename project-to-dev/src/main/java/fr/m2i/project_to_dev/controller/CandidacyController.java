@@ -63,6 +63,7 @@ public class CandidacyController {
         Candidacy candidacy = mapper.toEntity(dto);
         candidacy.setDev(dev);
         candidacy.setProject(project);
+        candidacy.setSubmitDate(java.time.LocalDateTime.now()); // ajoute la date actuelle
         
         return mapper.toDto(repo.save(candidacy));
     }
