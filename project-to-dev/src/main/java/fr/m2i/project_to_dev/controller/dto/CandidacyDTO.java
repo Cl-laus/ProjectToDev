@@ -11,7 +11,8 @@ public class CandidacyDTO {
     private Integer projectId;
     private LocalDateTime submitDate;
     @NotBlank
-    private String status; //'l'enum contient des strings
+    private String status; //'l'enum contient des strings  :
+    // "pending", "accepted", "declined"
 
 
     public Integer getId() {
